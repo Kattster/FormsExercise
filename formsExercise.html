@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Experience Survey</title>
+
+</head>
+<form>
+    <fieldset>
+        <legend>Customer Experience Survey</legend>
+            
+        <label for="store"> Store Number</label>
+        <select name="store" id="store">
+          <option hidden>Select A Store</option>
+          <option value="1001">10001</option>
+          <option value="1701">1701</option>
+        </select>
+               
+               
+        <fieldset>
+            <legend>When you visited:</legend>
+            <label for="date"></label>
+            <label>Date Visited: </label>
+            <input type="date" id="date" value="2022-01-01"> 
+            <!-- Need to review how to specify date range -->
+            <br>
+            <label>Time: </label>
+            <input type="time" id="time">
+        </fieldset>
+            <br>
+            <Label>Full Name: <input type="text" placeholder="Name"></Label>
+            <br>
+            <label>Email: <input type="email"id="userEmail" placeholder="name@domain.com" required></label>
+            <br>
+            <br>
+
+        <fieldset>
+            <legend>How would you rate your level of satisfaction withyour visit?</legend>
+            <input type="radio" id="satisfied" name="satisfaction">
+            <label for="satisfied">Satisfied</label>
+            <br>
+            <input type="radio" id="neither" name="satisfaction" checked>
+            <label for="neither">Neither Satisfied or Dissatisfied</label>
+            <!-- Review how to set a default selected rasio button -->
+            <br>
+            <input type="radio" id="Dissatisfied" name="satisfaction">
+            <label for="Dissatisfied">Dissatisfied</label>
+            <br>
+        </fieldset>
+            <br>
+    
+           <label> Tell us about your experience: </label>
+        <br>
+        <textarea name="experience" id="experience" cols="30" rows="5"></textarea>
+        <br>
+        <label> Times visited in the last month: </label>
+        <br>
+        <input type="number" id="times">
+        <!-- Review how to set the field size -->
+        <br>
+        <input type="checkbox"><label>Please check the box if you would be willing to be contacted about your experience</label>
+        <br>
+        <label>Password </label><input type="password" name="password" placeholder="Password" minlength="5" maxlength="10" >
+        <!-- How to display "Please enter a password that is 5 to 10 characters in length" -->
+        <br>
+        <input type="reset"> <input type="submit">
+        <br>
+    </fieldset>
+</form>
+<body>
+    
+</body>
+</html>
