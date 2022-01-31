@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,69 +8,83 @@
     <title>Customer Experience Survey</title>
 
 </head>
-<form>
-    <fieldset>
-        <legend>Customer Experience Survey</legend>
-            
-        <label for="store"> Store Number</label>
-        <select name="store" id="store">
-          <option hidden>Select A Store</option>
-          <option value="1001">10001</option>
-          <option value="1701">1701</option>
-        </select>
-               
-               
+
+<body>
+    <form>
         <fieldset>
-            <legend>When you visited:</legend>
-            <label for="date"></label>
-            <label>Date Visited: </label>
-            <input type="date" id="date" value="2022-01-01"> 
-            <!-- Need to review how to specify date range -->
+            <legend>Customer Experience Survey</legend>
+
+            <label for="store"> Store Number</label>
+            <select name="store" id="store">
+                <option hidden>Select A Store</option>
+                <option value="1001">10001</option>
+                <option value="1701">1701</option>
+                <option value="221B">221B</option>
+                <option value="2407">2407</option>
+            </select>
+
+            <div>
+                <fieldset>
+                    <legend>When you visited:</legend>
+                    <label for="date">Date Visited: </label>
+                    <input type="date" id="date" min="2022-01-01" max="2022-12-31">
+                    <!-- Adding the "min" and max" attributes will limit the date selection to a specific range -->
+                    <br>
+                    <label for="time">Time: </label>
+                    <input type="time" id="time" name="time">
+
+                </fieldset>
+            </div>
+
+            <Label for="fullName">Full Name: </Label>
+            <input type="text" id="fullName" placeholder="Name">
             <br>
-            <label>Time: </label>
-            <input type="time" id="time">
-        </fieldset>
-            <br>
-            <Label>Full Name: <input type="text" placeholder="Name"></Label>
-            <br>
-            <label>Email: <input type="email"id="userEmail" placeholder="name@domain.com" required></label>
-            <br>
+            <label>Email: </label>
+            <input type="email" name="email" id="email" placeholder="name@domain.com" required>
             <br>
 
-        <fieldset>
-            <legend>How would you rate your level of satisfaction withyour visit?</legend>
-            <input type="radio" id="satisfied" name="satisfaction">
-            <label for="satisfied">Satisfied</label>
+            <div>
+                <fieldset>
+                    <legend>How would you rate your level of satisfaction withyour visit?</legend>
+                    <input type="radio" id="satisfied" name="satisfaction">
+                    <label for="satisfied">Satisfied</label>
+                    <br>
+                    <input type="radio" id="neither" name="satisfaction" checked>
+                    <!--Adding the "checked" attribute will cause the radio input to be selected by default-->
+                    <label for="neither">Neither Satisfied or Dissatisfied</label>
+                    <br>
+                    <input type="radio" id="dissatisfied" name="satisfaction">
+                    <label for="dissatisfied">Dissatisfied</label>
+                </fieldset>
+            </div>
+            <div>
+                <label for="experience"> Tell us about your experience: </label>
+                <br>
+                <textarea name="experience" id="experience" cols="30" rows="3"></textarea>
+                <br>
+                <label for="times"> Times visited in the last month: </label>
+                <!-- Bonus 4 -->
+                <br>
+                <input type="number" name="times" id="times" min="1" max="30">
+                <!-- max/min limits th number selection to a spec range-->
+                <br>
+                <input type="checkbox" name="contact" id="contact" required>
+                <!-- Adding the required att will NOT allow the user to submit the form unless this is checked-->
+                <label>Please check the box if you would be willing to be contacted about your experience</label>
+            </div>
             <br>
-            <input type="radio" id="neither" name="satisfaction" checked>
-            <label for="neither">Neither Satisfied or Dissatisfied</label>
-            <!-- Review how to set a default selected rasio button -->
+
+            <label for="password">Password </label>
+            <input type="password" name="password" id="password" placeholder="Password" pattern=".{5,10}"
+                title="Please enter a password that is 5 to 10 characters in length">
+            <!-- Using the the pattern att allows for a req min & max length to be set for hte input. Also the title att allows for a message to be displayed when the user does NOT meet the requiremnets. -->
             <br>
-            <input type="radio" id="Dissatisfied" name="satisfaction">
-            <label for="Dissatisfied">Dissatisfied</label>
+            <input type="reset" value="Reset the Form"> <input type="submit">
             <br>
         </fieldset>
-            <br>
-    
-           <label> Tell us about your experience: </label>
-        <br>
-        <textarea name="experience" id="experience" cols="30" rows="5"></textarea>
-        <br>
-        <label> Times visited in the last month: </label>
-        <br>
-        <input type="number" id="times">
-        <!-- Review how to set the field size -->
-        <br>
-        <input type="checkbox"><label>Please check the box if you would be willing to be contacted about your experience</label>
-        <br>
-        <label>Password </label><input type="password" name="password" placeholder="Password" minlength="5" maxlength="10" >
-        <!-- How to display "Please enter a password that is 5 to 10 characters in length" -->
-        <br>
-        <input type="reset"> <input type="submit">
-        <br>
-    </fieldset>
-</form>
-<body>
-    
+    </form>
+
+
 </body>
+
 </html>
